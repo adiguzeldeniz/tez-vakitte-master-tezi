@@ -1,0 +1,137 @@
+\chapter{Numerical Implementation}
+
+\section{Method of lines}
+In general the optical Bloch equations in \Cref{rhoee}-\Cref{rhoeg} and \Cref{waveeq} cannot be solved analytically. Because of that, numerical methods are used. In order to solve the Equation of motions, one approach is to transform the Maxwell-Bloch equation, which is a partial differential equation (PDE), to a set of coupled ordinary differential equations, by discretizing the spatial derivative. To this extend, the well-known \textbf{Method of lines} \cite{Hamdi:2007} is used. \\
+
+For the numerical implementation $\phi(t) = 0$ is taken, such that the Maxwell-Bloch equations in \Cref{rhoee}-\Cref{rhoeg} and \Cref{waveeq} simplify and the set of equations to be solved is
+\begin{subequations}
+\begin{align}
+    \dot{\rho}_{ee} &= -\gamma \rho_{ee} + i \frac{\Omega(t)}{2} \rho_{ge} - i \frac{\Omega^*(t)}{2} \rho_{eg} \label{rhoee_act} \\
+    \dot{\rho}_{gg} &= +\gamma \rho_{ee} - i \frac{\Omega(t)}{2} \rho_{ge} + i \frac{\Omega^*(t)}{2} \rho_{eg}\label{rhogg_act} \\
+    \dot{\rho}_{eg} &= \left( -\frac{\gamma}{2} + i\Delta \right) \rho_{eg} + i\frac{\Omega(t)}{2} \rho_{gg} - i\frac{\Omega^*(t)}{2} \rho_{ee} \label{rhoeg_act} \\
+    \dot{\Omega} &= -\frac{1}{u} \Omega^{\prime} + i\frac{\eta}{u} \rho_{eg}\label{omega_act}
+\end{align}
+\end{subequations}
+A new variable u is introduced, which is the speed of light in medium. 
+
+\subsection{Discretization of spatial derivative}
+The basic idea of method of lines (MOL) is to approximate the spatial derivative with a finite difference \cite{Hamdi:2007}. The central difference formulation of the derivative of a function in a points $x_j$ is given by:
+\begin{equation}
+    f^{\prime}(x_j) = \frac{f(x_{j+1}) - f(x_{j-1})}{x_{j+1} - x_{j+1}} \label{finite_second}
+\end{equation}
+This formula is of order 2, where only the first spatial neighbours $x_{j \pm 1}$ have a contribution to the derivative at point $x_j$. By taking into account more points, e.g. from $x_{j \pm 2}$, higher orders can be used. 
+
+
+\subsection{Calculation of weights} \label{weight_section}
+To calculate the coefficients or \textit{weights} of the terms by higher order, we can use methods from \cite{Fornberg1998}.  Here we can taken an arbitrary function and calculate the Taylor-series of the function. In our case, we want to find the coefficients for a function like this:
+
+\begin{equation}
+    \frac{\mathrm{d}f}{\mathrm{d}x} \approx a_0 f(x-2h) + a_1 f(x-h) + a_2 f(x) + a_3 f(x+h) + a_4 f(x+2h) \label{weights_1}
+\end{equation}
+Which function we choose here is not important, because the coefficients $a_i$ are function-independent. So choose $f(x) = e^{\omega x}$ for ease of calculation. Inserting $f(x)$ in (\ref{weights_1}) gives:
+\begin{equation}
+    \omega e^{\omega x} = \left[a_0 e^{-2\omega h}+ a_1 e^{-\omega h} +a_2 +a_3 e^{\omega h}+a_4 e^{2\omega h} \right] e^{\omega x} \label{weights_2}
+\end{equation}
+using these substitutions
+\begin{equation}
+    u = e^{\omega h } \;\;\;\;\;|\;\;\;\;\; \omega = \frac{\log u}{h}
+\end{equation}
+Equation in (\ref{weights_2}) transforms to
+\begin{equation}\label{weights-mid}
+    \frac{\log u }{h} \approx \frac{a_0}{u^2} + \frac{a_1}{u} + a_2 + a_3 u + a_4 u^2
+\end{equation}
+multiplying both sides with $u^2$, we get to
+\begin{equation}
+    \frac{u^2 \log u}{h} \approx a_0 + a_1 u + a_2 u^2 + a_3 u^3 + a_4 u^4
+\end{equation}
+By comparison it can easily be seen that the coefficients we are looking for are the same coefficients of taylor series for $u^2 \log u $, when expanded locally around $h=0$. Thus the coefficients are
+\begin{equation}
+    a_0 =\frac{1}{12h}\;\;,\;\;a_1 = -\frac{2}{3h} \;\;,\;\;a_2 =0 \;\;,\;\;a_3 = \frac{2}{3h}\;\;,\;\;a_4 =-\frac{1}{12h} \, .
+\end{equation}
+If we factor out the $1/12$ from every coefficient, we arrive at the centered finite difference formula for fourth order
+\begin{equation}
+    \frac{\mathrm{d}f}{\mathrm{d}x} =-\frac{1}{12} \left[ f(x-2h) -8  f(x-h) + 8 f(x+h) - f(x+2h) \right] \label{coeff_fourth} \, .
+\end{equation}
+When carefully looking at, we see that a problem arises at the edges of our indices, which run from $i =1$ to N. So we have to compensate this problem in the edges of our index-definition, by shifting the weight of the coefficients of these terms. We can use a similar approach to calculate the weighted coefficients. For this, instead of using an equation like in \Cref{coeff_fourth}, another initial equation can be used:
+\begin{equation} \label{weights_firsterm}
+    \frac{\mathrm{d}f}{\mathrm{d}x} \approx a_0 f(x) + a_1 f(x+h) + a_2 f(x+2h) + a_3 f(x+3h) + a_4 f(x+4h)  
+\end{equation}
+This equation is used for example, to calculate the weighted coefficients for $i =1$. Here we get $\log u /h$ from which we need to calculate the taylor series. In general, these coefficients can be calculated with a simple mathematica script:
+\begin{verbatim}
+    CoefficientList[Normal[Series[x^s* Log[x]^m, {x, 1, n}]], x])
+\end{verbatim}
+Here m denotes the order of the derivative, s denotes where the first term begins (e.g. for \cref{weights-mid}: 2 and for \cref{weights_firsterm}: 0 ), and lastly n denotes the number of terms that should be calculated. A table of all calculated weights can be found in Appendix B.
+
+\subsection{Second vs. fourth order MOL}
+After implementing the discretization of the spatial derivative into \Cref{omega_act}, we get:
+\begin{equation}
+        \frac{d}{dt} \Omega_i = -\frac{1}{u} \left[ \frac{\Omega_{i+1} - \Omega_{i-1}}{z_{i+1} - z_{i-1}}\right] + i \frac{\eta}{u} \rho_{eg} \label{discre_first}
+\end{equation}
+
+Here we introduce the short hand notation $\Omega_i = \Omega(x_i) $. By using $h= z_{i+1} - z_i$, we can write the \Cref{discre_first} as follows:
+\begin{equation} \label{second_order}
+        \frac{d}{dt} \Omega_i = -\frac{1}{2u  \cdot h}  (\Omega_{i+1} - \Omega_{i-1})+ i \frac{\eta}{u} \rho_{eg|i}
+\end{equation}
+
+The indices run from $i=1,...N$ where N is the total number of discretization points. We can define the thickness of our target as $\mathrm{z_\mathrm{max}}$, which can be calculated as the number of indices times the size of the spatial distance between different points h. So we get $z_{max} = h \cdot N$ for the total thickness of the target. From now on, we will call every individual solution of index i, a \textbf{slice}, because as a result of the discretization of the spatial derivative, we do in fact split our target in N-slices with a thickness of h.\\
+
+The finite difference formula for second order was numerically highly unstable. Thus, for the actual implementation, the fourth order was used, which can be written similarly to \Cref{finite_second} as follows:
+\begin{equation}
+    \frac{d}{dt} \Omega_i = -\frac{1}{u  \cdot 12h}  (\Omega_{i-2} - 8\Omega_{i-1} + 8\Omega_{i+1}- \Omega_{i+2} )+ i \frac{\eta}{u} \rho_{eg|i} \, .\label{fourth_order}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Initial Conditions}
+\subsection{Nuclei}
+To be able to solve the coupled ODE's, we need to define the initial values. For $t=0$ we assume that all the nuclei are in ground state. Translating this into our equations, it looks like this:
+\begin{equation}
+    \begin{aligned}
+      \rho_{gg|i}\;(t=0) &= 1 \quad\quad |\quad\quad \rho_{ee|i}\;(t=0) = 0 \\
+      \rho_{eg|i}\;(t=0) &= 0 \quad\quad |\quad\quad \Omega_i\;(t=0) = 0
+    \end{aligned}
+\end{equation}
+These Equations are the initial conditions for $i =1,...,N$.
+
+
+\subsection{Incident Light as a Gaussian pulse}
+A Gauss packet was used to describe the incoming light field. Theoretically the incident light could be described with a Delta-Pulse as discussed in \Cref{section_respfunction}, but working with a delta pulse is numerically unstable. Thus a Gaussian with a small width $\sigma$ is used. The Gaussian is implemented as $\Omega_0$ of the first slice
+\begin{equation}
+    \Omega_0(t) = A \cdot e^{-(t-t_0)^2/\sigma^2}
+\end{equation}
+whereas A is the amplitude, $\sigma$ is the width of the Gaussian and $t_0$ is the position of the center of the peak. By the coupling in \Cref{fourth_order} it can propagate to other slices. The \textbf{Pulse area} $\mathbf{\mathcal{A}}$, which is a measure for the excitation as discussed in \Cref{section:pulseareatheorem}, can be calculated as the area of the Gaussian
+\begin{equation}
+    \mathcal{A} = \int_{-\infty}^{\infty} A \; e^{-(t-t_0)^2/\sigma^2} \mathrm{d}t =  \left( \frac{A \sigma}{\sqrt{\pi}} \right)\;\; \pi\, . \label{pulse_are_calc}
+\end{equation}
+So by calculating the expression in the last parentheses, the pulse area can be calculated and given in $\pi$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Implementation}
+The programming language Julia \cite{Julia-2017} was used to implement the Maxwell-Bloch equations with the method of lines. In \Cref{table:the_parameters} all the parameters are given with a basis set of values for each parameter. In the next chapters, most of the time the equations will be solved with these basis set of values unless stated otherwise.\\
+
+Here, a few remarks to the chosen parameters as a basis. u, the speed of light, is taken much smaller than what it actually is. This is due to the numerical instabilities with increasing speed of light. To compensate this problem one has to increase the number of slices, N, which then leads to a rapid increase of computation time. There were also some calculations done with much faster speed of light and much more number of slices, which shows the same structures that we will be seeing. So for the discussion and a more reasonable computation time, we sticked to a slower speed of light.\\
+
+Another remark would be the choosing of $\gamma$. Instead of using the natural lifetime of e.g. $\alpha$-Iron, we set $\gamma = 1$, so that it is material independent. As a result, the time in all plots will be re-scaled to dimensionless units, which is a common practice in literature.\\
+
+Apart from that, $z_\mathrm{max}$ is set to 0.7, corresponding to a target thickness $d \approx 0.7 \mu m$, calculated using formulas (\ref{b_conversion}) and (\ref{betazmax}). This is a relatively thin target compared to the typical experimentally available targets, which range from $1\;\mu m$ to $20\; \mu m$. Moreover, selecting a larger $z_\mathrm{max}$ requires a larger N. This requirement arises because our approximation uses finite slice widths, defined as h in (\ref{second_order}), with $z_\mathrm{max} = h \cdot N$. If h exceeds a certain threshold, numerical instability occurs \cite{Hamdi:2007}.\\
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|p{10cm}|c|}
+    \hline Parameters&Their Meanings & basis values\\ \hline
+        $t_0$ & The position of the center of the Gaussian; can also be interpreted as the time, as our Gaussian enters the target/medium & 4 \\ \hline
+        $u$ &  The speed of light in the target/medium & 6/10\\ \hline
+        $\omega$ & Half width of the Gaussian &1/45 \\ \hline
+        $A$ &  The Amplitude of the Gaussian & - \\ \hline
+        $N$  & Number of Slices; in other words the number of discretization points of the spatial coordinate& 400 \\ \hline
+        $\gamma$ & The natural lifetime of atoms in the target/medium & 1\\ \hline
+        $\Delta$ & The Detuning; The difference between the incident field frequency and the atomic transition frequency & 0\\ \hline
+        $\eta$ & The coupling constant between the electric field $\Omega$ and the atomic equations $\rho_{eg}$ & 8 \\ \hline
+        $z_\mathrm{max}$ & The thickness of the target; arises from the discretization and defined as $z_\mathrm{max} = N\cdot h$& 0.7 \\\hline
+    \end{tabular}
+    \caption{The parameters that are being used to solve the Maxwell-Bloch equations numerically and a basis set of values for parameters}
+    \label{table:the_parameters}
+\end{table}
+

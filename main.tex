@@ -1,0 +1,258 @@
+%Packages and what they are doing
+%\documentclass[10pt]{report}     %settting the type of the document
+
+\documentclass  [
+  %paper    = a4, %BCOR     = 10mm, twoside, openright, fontsize = 10pt, toc      = bibnumbered,
+  toc      = listofnumbered, numbers  = noendperiod, headings = normal, chapterprefix=true,%my own
+  listof   = leveldown, version  = 3.22, bibliography=totoc
+]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}   %language and the fontface of the document
+\usepackage{amsfonts,amsmath,amssymb} %some math symbols
+\usepackage{braket} %for bra's and ket's
+
+%Dummy texts
+\usepackage{blindtext}
+\usepackage{lipsum}
+
+\usepackage{wrapfig} %creates figures that wrap around text
+\usepackage{multicol} %multicolumn text
+
+%Page space settings
+%\usepackage{fullpage} %uses the full page
+\usepackage[a4paper,bindingoffset=0.2in,%
+left=1in,right=1in,top=1in,bottom=1in,%
+footskip=.25in]{geometry}
+
+\usepackage[pdftitle={Effects of non-linear excitation on the propagation of light},pdfauthor={Deniz Adigüzel},pdfcreator={},pdfproducer={}]{hyperref}
+
+%------Library settings------
+\usepackage[backend=biber, hyperref,url=false, isbn=false, style=alphabetic, sorting=anyt]{biblatex}
+\addbibresource{ref.bib}
+
+%_________________________________________________________________________________________
+
+\usepackage{nameref}
+\usepackage{todonotes}
+
+\usepackage{mhchem}
+\usepackage{soul}
+
+
+\usepackage{subfiles}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{physics}
+\usepackage{IEEEtrantools}
+%\renewcommand{\theequationdis}{{\normalfont (\theequation)}}
+%\renewcommand{\theIEEEsubequationdis}{{\normalfont (\theIEEEsubequation)}}
+%\renewcommand{\ref}[1]{\eqref{#1}}
+\usepackage{cases}
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\def\doubleoverline#1{\overline{\overline{#1}}}
+\newcommand{\vv}[1]{\mathbf{#1}}         %%% vector symbols (std)
+\newcommand{\mathcomma}{\,,}  %%% comma in mathematical environment
+\usepackage{dsfont}
+
+\usepackage{booktabs}
+
+\usepackage[labelfont=bf,font=small]{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\setcapindent{0pt}
+
+\usepackage{adjustbox}
+\usepackage{enumitem}
+%%\setitemize{wide} % stop wide labels from sticking into margin
+
+\usepackage[normalem]{ulem}
+
+
+% nice fractions
+\usepackage{nicefrac}
+
+% python code
+%\usepackage{minted}
+
+% bold mathcal
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+% ornaments
+\usepackage{fourier-orns}
+%\usepackage{fourier}
+
+\usepackage                             {color}
+\usepackage                      {graphicx}%[draft]
+
+
+%---------------------COLORS---------------------
+\definecolor{darkblue}{rgb}{0.0,0.0,0.4}
+\definecolor{darkgreen}{rgb}{0.0,0.4,0.0}
+
+\hypersetup{
+    colorlinks,
+    linkcolor=black,
+    citecolor=darkgreen,
+    urlcolor=darkblue
+}
+\addtokomafont{disposition}{\rmfamily}
+
+\AtEveryBibitem{%
+	\clearfield{month}%
+}
+ 
+% increase ToC spacing between number and title
+\usepackage{tocloft}
+\setlength\cftpartnumwidth{2.5em}
+\setlength\cftchapnumwidth{2.5em}
+\setlength\cftsecnumwidth{2.5em}
+\setlength\cftsubsecnumwidth{3.0em}
+\setlength\cftsubsubsecnumwidth{2.5em}
+
+% comments and todo notes
+\newcommand{\dl}[1]{{\color{blue}#1}}
+\newcommand{\rev}[1]{{\color{red}#1}}
+
+% for moving conclusion chapter out of part
+\usepackage{bookmark}
+
+
+%\usepackage{setspace}
+%\usepackage{parskip}
+%\usepackage{multirow}
+%\usepackage{titlesec}
+%usepackage[section]{placeins}
+%\usepackage{xcolor}
+%\usepackage{breakcites}
+%\usepackage{lineno}
+%\usepackage{hyphenat}
+%\usepackage{etoolbox}
+%\usepackage[round]{natbib}
+%\usepackage{authblk}
+%\usepackage{graphicx}
+%\usepackage[space]{grffile}
+%\usepackage{latexsym}
+%\usepackage{textcomp}
+%\usepackage{longtable}
+%\usepackage{tabulary}
+%\usepackage{booktabs,array,multirow}
+
+\usepackage{verbatim}
+
+
+\usepackage{dsfont}
+\usepackage{MnSymbol}
+\usepackage{cleveref}
+
+
+
+
+\setlength{\parindent}{0pt}
+
+
+
+\begin{document}
+ 
+\pagenumbering{roman}
+  %% title pages similar to providet template instead of maketitle
+  %\include{titlepages-ger} % select either german
+\include{titlepage} % or english title page
+  %\renewcommand{\familydefault}{ComputerModern}
+  
+\null\cleardoublepage
+
+\thispagestyle{plain}
+\include{abstracts}
+\thispagestyle{empty}
+
+    %\listoftodos
+
+  \tableofcontents
+  
+ \null\cleardoublepage
+  
+  \pagenumbering{arabic} %% start page 1
+  \pagestyle{headings}
+%  \pagestyle{fancy}
+  \setcounter{page}{1}
+
+\include{chap_intro}
+\include{chap_background}
+\include{chap_methods}
+\include{chap_highlow}
+
+
+%\include{chap_phasescramb}
+
+
+
+\include{chap_conclusion}
+
+
+
+\appendix
+%\include{chap_appendixA}
+\include{chap_appendixB}
+\bookmarksetup{startatroot}
+\printbibliography
+\listoffigures
+\listoftables
+
+
+
+\include{chap_acknowledge}
+
+
+ 
+\end{document}
+
+
+% \pagenumbering{roman}
+% \begin{document}
+	
+% %% title pages similar to providet template instead of maketitle
+% \subfile{titlepage} 
+
+% \cleardoublepage
+
+% \subfile{abstracts}
+% %%\include{content/Frontmatter/abstracts}
+
+% \tableofcontents
+
+% \cleardoublepage
+
+% \pagenumbering{arabic}
+
+% %% Put your contents here
+% \subfile{chap_intro}
+% \subfile{chap_background}
+% \subfile{chap_phasescramb}
+% \subfile{chap_highlow}
+
+
+% \renewcommand\thepart{}
+% \renewcommand\partname{}
+% \part{Appendices}
+% \setcounter{part}{0}
+  
+% \appendix
+% \subfile{chap_appendixA}
+% \subfile{chap_appendixB}
+%   	%%%\subfile{content/99_Appendices/x_TODOS}
+  
+% %\chapter{Lists}
+
+
+% %    
+% \bookmarksetup{startatroot}
+% \printbibliography
+% %    \include{deposition}
+
+% \cleardoublepage
+
+% \subfile{chap_acknowledge}
+
+	
+% \end{document}

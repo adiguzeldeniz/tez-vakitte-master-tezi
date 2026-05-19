@@ -1,0 +1,281 @@
+\chapter{Theoretical Background}
+In this chapter, the equations of motion (EOM) for nuclear forward scattering (NFS) will be derived semiclassically, such as the response function formalism in the low excitation regime. We start with an introduction to quantum optics and two level systems. We will then extend this to the open quantum systems formalism, to be able to integrate the spontaneous emission to our model. Doing so, we arrive at the optical-bloch equations. Response function in time domain will be derived by fourier transforming the frequency-domain solution of the optical Bloch equations to the time domain. \\\
+\begin{figure}[b!]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{data/background/mossbauer_transitions2.pdf}
+    \caption{ Mössbauer transitions in $\ce{^{57}_{}Fe} $. Here $I_g$ and $I_e$ denotes the nuclear spins of the ground and excited state, respectively, $E$ the transition energy, $\gamma$ the linewidth, $\tau$ natural lifetime. In the presence of a magnetic hyperfine field, two states split up to 6 states.(Adapted from \cite{https://doi.org/10.11588/heidok.00017869})}
+    \label{fig:mossbauertransitions}
+\end{figure}
+
+\section{Mössbauer}
+
+
+
+
+\subsection{Mössbauer isotopes as an extreme platform for quantum optics}
+The Mössbauer effect was found by Rudolf L. Mössbauer in 1958 \cite{Mssbauer1958}, for which he received a Nobel prize in 1961. In this effect the momenta of the photons are absorbed by the entire lattice without phonon creation/annihilation, which enables the recoil-free absorption and emission of photons. Due to the recoil-free absorption, the linewidth of these transitions are extremely narrow, which makes them a perfect candidate for precision spectroscopy \cite{2012rudolfmossbauerstory, Rhlsberger2005}. \\
+
+In \Cref{fig:mossbauertransitions}, the relevant nuclear transitions of $\ce{^{57}_{}Fe} $ can be seen. The isotope $\ce{^{57}_{}Fe} $ is the most widely used Mössbauer isotope \cite{Heeg2021}, but other isotopes are also being used, e.g. scandium \cite{Shvydko2023}. A complete list of Mössbauer nuclei can be found in the appendix of \cite{Rhlsberger2005}.\\
+
+Besides the extremely narrow linewidths Mössbauer nuclei prove, they are mostly in the hard x-ray regime, with transition energies around and above 10 keV. Due to the extremely narrow linewidths, it was not possible to reach high excitations \cite{oldproblem1,oldproblem2,oldproblem3}. With the advancement of seeded x-ray free electron lasers in hard x-ray regime and novel measuring schemes, it is possible to generate more nuclear-resonant photons \cite{McNeil2010,RevModPhys.88.015006}. First experiments have already proven the advantage of the orders of magnitude higher photon flux as compared to synchrotrons \cite{Rffer2021,Shvydko2023}. \\
+
+\subsection{Nuclear forward scattering}
+To investigate the structure and dynamics of condensed matter, one of the most powerful methods is the scattering of x-rays, such as: Diffraction, Spectroscopy and Imaging. An example setup of such a nuclear forward scattering experiment at XFELs can be seen in \Cref{fig:NFS_setup}. Here incident x-ray pulse excites the nuclei in the sample. These excited nuclei would then undergo spontaneous emission, where they emit position and time dependent radiation. A coherent superposition of emitted lights would then interfere, which results in a characteristic spectrum as a time response \cite{Rhlsberger2005}.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 1\textwidth]{data/background/setup_2.pdf}
+    \caption{Setup of the nuclear forward scattering experiment. The x-ray light is scattered and the coherent light can be measured in the direction of the incident light, as it is highly directional. (Adapted from M. Gerharz Poster.)}
+    \label{fig:NFS_setup}
+\end{figure}
+
+
+\subsection{Calculation of b parameter to physical thickness}
+In theory, a theoretical thickness parameter $b$ is used to describe the physical thickness of the target $d$. This $b$ parameter can be expressed in terms of material properties by \cite{https://doi.org/10.11588/heidok.00017869, lentrodt2021ab, wolff2023detecting} as
+\begin{equation}
+    \mathrm{b} = \frac{\pi \rho}{2 k_0^2} \frac{f_{\mathrm{LM}}}{(1+\alpha)} \frac{2I_{e} +1}{2 I_{g}+1} \gamma \mathrm{d}\, , \label{b_phys}
+\end{equation}
+
+where for $\alpha$-iron ($\ce{^{57}_{}Fe} $),  $\rho = 83.13 \;\mathrm{nm}^{-3}$ is the nuclear density, $k_0 = 73.039 \;\mathrm{nm}^{-1}$ the wave vector of the transition, $f_\mathrm{LM} \approx 0.8$ the Lamb-Mössbauer factor, $\alpha = 8.56$ the factor of internal conversion, $I_e = 3/2$, $I_g = 1/2$ the spins of the nuclear excited and ground states, respectively, $\gamma = 4.66 \; \mathrm{neV}$ is the natural linewidth of the resonance. Plugging these values in \Cref{b_phys}, we receive a conversion factor
+\begin{equation}
+    d = 0.249 \;\; \mu \mathrm{m} \cdot \mathrm{b}[\gamma]\label{b_conversion}\, .
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Quantum optical model}
+
+\subsection{Light-Matter Interaction}
+
+The interaction between a radiation field and matter can be calculated, where the matter is modelled as a two level system. Here we use a basis of $\{\ket{g}, \ket{e}\}$, denoting ground and excited states, correspondingly. Furthermore, these two states have an energy difference of $\Delta E_{12} = \hbar (\omega_2 - \omega_1) = \hbar \omega_0$, where in the last equality we just denote the energy difference of these states as the transition energy $\hbar \omega_0$. The Hamiltonian of this system is given as \cite{bloch2004licht}:
+\begin{equation} \label{timehamiltonian}
+    H = H_{\textrm{atom}} + V = \hbar \omega_0 \ket{e} \bra{e} - \hat{d} \Vec{E}(t) \, . 
+\end{equation}
+Here the first term is the energy of the excited state and the second term is the light matter interaction operator, given in the \textbf{dipole approximation}, meaning that the electric field is position independent. The operator $\hat{d}$ is the electric dipole-operator and is given by: $\hat{d} = -e \hat{\Vec{r}}$. The electric field can be written as \cite{Scully_Zubairy_1997, reiser2014time}:
+
+\begin{equation}
+    \Vec{E}(t) = \frac{E_0}{2} \;  e^{-i\nu t + i \phi(t) + ikz} + \;\; \textrm{c.c.}\, ,
+\end{equation}
+where $E_0$ is the amplitude, $\nu $ the carrier frequency of light field, k the wavevector and $\phi(t)$ the phase of the incident light field. In \textbf{Rotating wave approximation}, the Hamiltonian in (\ref{timehamiltonian}) can be written as \cite{bloch2004licht}:
+\begin{equation} \label{thehamiltonian}
+    H = \hbar \omega_0 \ket{e} \bra{e} - \frac{\hbar}{2} \Omega(t) e^{-i(\omega_0 + \Delta)t + i\phi(t)} \ket{e}\bra{g}
+    -\frac{\hbar}{2} \Omega^*(t) e^{-i(\omega_0 + \Delta)t - i\phi(t)} \ket{g}\bra{e} \, ,
+\end{equation}
+where we introduced the detuning $\Delta = \nu - \omega_0 $. The coupling is quantified by the Rabi-frequency:
+\begin{equation}
+    \Omega(t) = \frac{d_{eg}}{\hbar} E_0(t) \; . \label{rabi_omega}
+\end{equation}
+Here $d_{eg} $ denotes the dipole matrix element and $\hbar$ the Planck's constant. 
+
+
+\subsection{Spontaneous Emission}
+In experiments, we often have to consider open quantum systems and thus need to include spontaneous emission into our description of the light-atom interaction. Spontaneous emission destroys coherence and for that cannot be described by pure states. Those mixed states can be described with the density matrix formalism.\\
+
+A density matrix $\rho(t)= \ket{\Psi} \bra{\Psi}$ describes the quantum state $\ket{\Psi(t)}$ at time t. The dynamics of the density matrix are governed by the \textbf{Master Equation}
+\begin{equation} \label{master_eq}
+    \frac{d}{dt} \hat{\rho} = \frac{1}{i\hbar} \left[\hat{H}, \hat{\rho}   \right] + \mathcal{L}[\hat{\rho}] \, .
+\end{equation}
+
+Here $\left[\hat{A},\hat{B}\right] = \hat{A} \cdot\hat{B} - \hat{B} \cdot\hat{A}$ denotes the commutator and describes the unitary dynamics of the system. The second term is called the \textbf{Lindbladian} and describes the non-unitary and incoherent dynamics of the system, which can be written as
+\begin{equation}\label{lindbladian}
+    \mathcal{L}[\hat{\rho}] = -\frac{\gamma}{2} (\sigma^+ \sigma^- \hat{\rho} +\hat{\rho}\sigma^+ \sigma^- -2\sigma^- \hat{\rho}\sigma^+  )\,.
+\end{equation}
+The operators $\sigma^+$ and $\sigma^-$ are ladder operators and are given by $\sigma^+ = \ket{e}\bra{g}$ and  $\sigma^- = \ket{g}\bra{e}$, $\gamma$ is the rate of spontaneous emission. Another important property of the two level system is that the trace of the density matrix equals to 1:
+\begin{equation}
+    \mathrm{Tr}[\rho] = 1 \;\;\;\;\;\longrightarrow\;\;\;\;\; \rho_{gg} + \rho_{ee} = 1\, .
+\end{equation}
+
+\subsection{Maxwell-Bloch Equations}
+Using the Master Equation (\ref{master_eq}) with the Lindbladian (\ref{lindbladian}), we can calculate the density matrix of the two level system $\rho_{ij} = \bra{i} \hat{\rho} \ket{j}$. This set of equations is called the \textbf{Optical Bloch equations} \cite{bloch2004licht, reiser2014time}:
+\begin{subequations}
+\begin{align}
+    \dot{\rho}_{ee} &= -\gamma \rho_{ee} + i \frac{\Omega(t)}{2} e^{-i \nu t + i \phi(t)} \rho_{ge} - i \frac{\Omega^*(t)}{2} e^{+i \nu t - i \phi(t)} \rho_{eg} \, ,\\
+    \dot{\rho}_{gg} &= +\gamma \rho_{ee} - i \frac{\Omega(t)}{2} e^{-i \nu t + i \phi(t)} \rho_{ge} + i \frac{\Omega^*(t)}{2} e^{+i \nu t - i \phi(t)} \rho_{eg} \, ,\\
+    \dot{\rho}_{eg} &= - \frac{\gamma}{2} \rho_{eg} - i \omega_0 \rho_{eg} + i \frac{\Omega(t)}{2} e^{-i \nu t + i \phi(t)} \rho_{gg} - i \frac{\Omega^*(t)}{2} e^{+i \nu t - i \phi(t)} \rho_{ee}\, , \\
+    \rho_{eg} &= \rho^*_{ge}\, .
+\end{align}
+\end{subequations}
+Here $\rho_{ee}$ denotes the density matrix element of atom being in the excited state $\ket{e}$, $\rho_{gg}$ denotes the atom being in the ground state $\ket{g}$ and $\rho_{eg}$ denotes the density matrix element corresponding to the coherence between the ground state $\ket{g}$ and the excited state $\ket{e}$ induced by the propagating field. Using an interaction picture in the form $\Tilde{\rho}_{ge} = \rho_{ge}\; e^{-i(\omega_0 + \Delta)t + i\phi(t)}$, the optical bloch equations simplify to \cite{Scully_Zubairy_1997, reiser2014time}:
+\begin{subequations}
+\begin{align}
+    \dot{\rho}_{ee} &= -\gamma \rho_{ee} + i \frac{\Omega(t)}{2} \Tilde{\rho}_{ge} - i \frac{\Omega^*(t)}{2} \Tilde{\rho}_{eg}\, , \label{rhoee} \\
+    \dot{\rho}_{gg} &= +\gamma \rho_{ee} - i \frac{\Omega(t)}{2} \Tilde{\rho}_{ge} + i \frac{\Omega^*(t)}{2} \Tilde{\rho}_{eg}\, ,\label{rhogg} \\
+    \dot{\rho}_{eg} &= \left( -\frac{\gamma}{2} + i\Delta -i\dot{\phi}(t) \right) \Tilde{\rho}_{eg} + i\frac{\Omega(t)}{2} \rho_{gg} - i\frac{\Omega^*(t)}{2} \rho_{ee} \label{rhoeg}\, , \\
+    \rho_{eg} &= \rho^*_{ge}\, . \label{rhoge}
+\end{align}
+\end{subequations}
+In the next step, we want to calculate the propagation of light in a medium which is modeled by a two level system, like in equations (\ref{rhoee})-(\ref{rhoge}). The propagation of such an electric field is governed by Maxwell's equations. In the semiclassical theory, the polarisation depends on the density matrix element. Using the \textit{slowly-varying envelope approximation}, we get a coupled differential equation for the Wave Equation \cite{PhysRevA.76.033817,Scully_Zubairy_1997,reiser2014time}:
+\begin{equation} \label{waveeq}
+    \left(\frac{\partial}{\partial z} + \frac{1}{c_0} \frac{\partial}{\partial t} \right) \Omega_0+  \Omega_0\left(\frac{\partial}{\partial z} + \frac{1}{c_0} \frac{\partial}{\partial t} \right) \left(i\phi(t,z) \right) = i\eta \Tilde{\rho}_{eg}
+\end{equation}
+Here $\eta$ is the coupling parameter between $\Omega$ and $\rho_{eg}$. The Equations (\ref{rhoee})-(\ref{rhoge}) and \Cref{waveeq} are called the Maxwell-Bloch Equations and are the main set of equations, which will be used throughout this thesis. For our discussion, we set the additional phase of the incident light field to zero $\phi(t) = 0$ for simplicity. 
+
+\subsection{Pulse area theorem}\label{section:pulseareatheorem}
+Consider a non-decaying two-level system driven by a resonant field. Assuming the system to be initially in the ground state, i.e.$\;\rho_{gg} = 1$, the excited state population can be calculated with the \textbf{area theorem} \cite{allen1987optical, meystre2007elements}:
+\begin{subequations}
+\begin{align}
+    \rho_{ee}(t) &= \sin^2[\mathcal{A}(t)] \label{pulse_area_theorem_rhoee}\, ,\\
+    \rho_{ge}(t) &= - \frac{i}{2} e^{i\phi} \sin[\mathcal{A}(t)] \label{pulse_area_theorem_rhoge}\, .
+\end{align}
+\end{subequations}
+Here t denotes the passed time after the incident light pulse. The pulse area is calculated by
+\begin{equation}
+    \mathcal{A}(t) = \int_{t_0}^t |\Omega(t^\prime)| \mathrm{d}t^\prime\, , 
+\end{equation}
+where $\Omega(t)$ denotes the Rabi frequency, which is proportional to incident light packet in \cref{rabi_omega}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Low excitation regime}
+The excitation of the nuclei varies depending on the pulse area of the incident light. Two significant regimes are distinguished: the low excitation regime, where most of the nuclei are in the ground state and can be approximated by the low excitation approximation, and the population inversion regime, where all the nuclei are in the excited state ($\rho_{ee} = 1$). An important characterization method for distinguishing between these regimes is outlined in \cite{wolff2023characterization}. This paper presents methods that can effectively differentiate between the low excitation regime and states beyond it.\\
+
+\subsection{Low Excitation Approximation}
+Despite the potential for higher numbers of resonant photons per pulse promised by new x-ray free electron lasers, experiments on Mössbauer nuclei have thus far been limited to the low excitation regime due to the small number of resonant photons available. Consequently, we assume the pulse area to be very small, denoted as $\mathcal{A} \ll \pi$, leading to what is commonly referred to as the linear approximation:
+
+\begin{equation}
+\rho_{gg} \approx 1 \quad \longrightarrow \quad \rho_{ee} \approx 0 \, .
+\end{equation}
+
+Here, $\rho_{gg}$ represents the population of nuclei in the ground state, while $\rho_{ee}$ represents the population of nuclei in the excited state. This approximation assumes that the majority of nuclei remain in the ground state.\\
+
+\subsection{Response function in time and frequency domain}\label{section_respfunction}
+The Maxwell-Bloch equations are a set of coupled partial differential equations and in general can't be solved analytically. However, in the low excitation approximation the Maxwell-Bloch equations decouples and can be solved analytically. In this case, the equations (\ref{rhoee})-(\ref{rhoge}) and \Cref{waveeq} reduce to
+\begin{align}
+    \dot{\rho}_{eg} &= -\frac{\gamma}{2} \Tilde{\rho}_{eg} + i\Delta \Tilde{\rho}_{eg} + \frac{i}{2} \Omega \, , \label{rhoegpre}\\
+    i\eta \Tilde{\rho}_{eg} &= \Omega' + \frac{1}{c_0} \dot{\Omega} \, .\label{Omegapre}
+\end{align}
+To solve these equations, we transform them to the frequency domain, where the time derivatives turn to multiplications. With the Fourier transformations
+\begin{align}
+    \Omega(t,z) &= \frac{1}{2\pi} \int \Omega(\omega,z)\; e^{-i\omega t} \;d\omega \, , \label{fourierdef}\\
+    \rho_{eg}(t,z) &= \frac{1}{2\pi} \int \rho_{eg}(\omega,z)\; e^{-i\omega t}\; d\omega\, ,
+\end{align}
+the \Cref{rhoegpre,Omegapre} become in the frequency domain
+\begin{align}
+    -i\omega \Tilde{\rho}_{eg}(\omega, z) &= \left(\frac{-\gamma}{2} + i\Delta \right)\Tilde{\rho}_{eg} (\omega,z) + \frac{i}{2} \Omega(\omega, z) \label{timerhoegpre}\, , \\
+    i\eta \Tilde{\rho}_{eg}(\omega, z) &= \frac{\partial}{\partial z} \Omega(\omega, z) - \frac{i\omega}{c_0} \Omega(\omega, z) \, .\label{timeomegapre}
+\end{align}
+In this form, the first equation can be solved for $\Tilde{\rho}_{eg}$ and inserted in the second equation. So we get the ordinary differential equation (ODE):
+\begin{equation}
+    \frac{\partial}{\partial z} \Omega(\omega,z) = \left(\frac{-i \eta /2}{\omega + \Delta + i \frac{\gamma}{2}}  + i \frac{\omega}{c_0}\right) \Omega(\omega,z) \label{ODE}
+\end{equation}
+This ODE has an exponential solution with an initial condition defined in the time domain as $\Omega_0(t,0) = \frac{1}{2\pi} \int \Omega_0(\omega,0) e^{-i\omega t} \;d\omega$. The solution of \cref{ODE} is given by:
+\begin{equation}
+    \Omega(\omega,z) = \exp{\left(\frac{-i \eta /2}{\omega + \Delta + i \frac{\gamma}{2}}  + i \frac{\omega}{c_0}\right) \cdot z} \;\Omega_0(\omega,0) \label{responseinfreq}
+\end{equation}
+This equation is called the \textbf{response function} in frequency domain and describes the light propagation in the low excitation regime. In order to determine the time response of our system, we have to transform this equation back into the time domain to obtain the response function in time domain. Using the fourier tranformation definition in \Cref{fourierdef} in order to transform \cref{responseinfreq} into the time domain and substitute $\Omega(t)$ back into the electric Field in \Cref{rabi_omega}:
+\begin{equation}
+    E(t,z) = \frac{1}{2\pi} \int d\omega \; E_0(\omega, 0)\;\; e^{\frac{-i\eta/2\cdot z}{\omega+\Delta+ \frac{i \gamma}{2}}}\;\; e^{-i\omega(t-\frac{z}{c_0})}  e^{i\nu (t-\frac{z}{c_0})} \, .\label{Omega_first}
+\end{equation}
+We define new parameters to substitute in the integral
+\begin{equation}
+    \mathrm{b} = \frac{\eta z}{2} \,\; ,\; \, \tau = t-\frac{z}{c_0}\, . \label{betazmax}
+\end{equation}
+Here $\gamma $ is the line width, $\tau$ is the retarded time and b is the thickness parameter introduced in \cref{b_phys}. Using these definitions, the \Cref{Omega_first} becomes
+\begin{equation}
+    E(t,z) = \frac{1}{2\pi} \int d\omega \; E_0(\omega, 0)\;\; e^{\frac{-ib}{\omega-\omega_0+ \frac{i \gamma}{2}} -i\omega \tau}\, .
+\end{equation}
+This equation can be split into two parts by using the convolution theorem \cite{kagan1979excitation}
+\begin{equation}
+    E(t,z) = E_0(t,0) \ast R(t,z)\, .
+\end{equation}
+The $R(t,z)$ is the response function in time domain and describes the time response for an initial delta Pulse $E(t,0) = \delta(t)$. The Response function can be calculated using Residual integration from function theory, by obtaining the Poles and calculating the residues \cite{smirnov1999perturbation,reiser2014time}. For that we start of by writing the exponential term as a power series:
+\begin{align}
+    R(t,z) &= \frac{1}{2\pi} \int d\omega \; e^{\frac{-i b}{\omega-\omega_0+ \frac{i \gamma}{2}}} e^{-i\omega \tau} \\
+    &= \frac{1}{2\pi} \int d\omega \; e^{-i\omega \tau} \;\; \left[ 1+ \sum_{n=1}^\infty \frac{1}{n!} \left(\frac{-ib}{\omega-\omega_0 + \frac{i \gamma}{2}} \right)^n \right] \\
+    &= \frac{1}{2\pi} \int d\omega \; e^{-i\omega \tau} + \frac{1}{2\pi}  \sum_{n=1}^\infty \frac{(-ib)^n}{n!} \int d\omega \;  \frac{e^{-i\omega \tau} }{(\omega-\omega_0 + \frac{i \gamma}{2})^n}\label{responsestep1}
+\end{align}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.75\textwidth]{data/background/besselbeats_2.png}
+    \caption{Intensity $I = |E|^2 = |R|^2$ as function of time for two different b parameters and two different $\gamma$ values , with $\Delta = 0 $. The natural lifetime of $\ce{^{57}_{}Fe} $ $\tau = 141 \mathrm{ns} $ \cite{Rhlsberger2005}, where $\gamma = 1/\tau$. Generally $\gamma^{-1} $ is used as the time scale as a dimensionless unit. For this plot, the time scale is given in nanoseconds, calculated using the natural lifetime of $\ce{^{57}_{}Fe} $, to illustrate the decay process of Iron-57}
+    \label{theory_besselbeats}
+\end{figure}
+
+The first part in the \Cref{responsestep1} is the unscattered light that propagates through the medium without interaction and the second part can be interpreted as the light scattered in succesion by n resonant nuclei \cite{smirnov1996nuclear}. To evaluate the second part in \cref{responsestep1},  Cauchy's residue theorem \cite{Freitag2006} 
+\begin{equation}
+    \oint\limits_{C} \frac{f(z)}{(z-z_0)^n} \mathrm{d}z = \frac{-2\pi i }{(n-1)!} f^{(n-1)}(z_0)\, , \label{responsestep2}
+\end{equation}
+where $z_0$ is the pole and C is a semicircle in the lower/upper half plane is used. The second part in \Cref{responsestep1} has a pole at $\omega = \omega_0 - i\gamma$ and we identify  $z \hateq \omega$, $z_0 = -\Delta -i\gamma$, $f(z) = e^{-i\omega \tau}$ and $f^n = (-i\tau )^n e^{-i\omega \tau}$. Inserting these parameters into \Cref{responsestep2}, we get
+\begin{equation}
+    R(t,z) = \delta(t) - \frac{b}{\sqrt{b\tau}} \sum_{n=0}^{\infty} \frac{(-1)^n}{n!(n+1)!} \left(\frac{2\sqrt{b\tau}}{2} \right)^{2n+1} \; e^{-i\omega_0 \tau} e^{-\frac{\gamma \tau}{2}} \theta(\tau) \, .
+\end{equation}
+Here the second part of the equation can be written as a Bessel function of first kind with order one and the response function in time space reads \cite{smirnov1996nuclear}
+\begin{equation} \label{responsefunction}
+    R(t,z) = \delta(\tau) - \sqrt{\frac{b}{\tau}} J_1(2\sqrt{b\tau}) e^{-i\omega_0 \tau} e^{-\frac{\gamma \tau}{2}} \theta(\tau)\, .
+\end{equation}
+
+
+
+Due to the coherence and collective interference effects, such as coherent superposition of emitted light from different nuclei, \textbf{dynamical beats} emerge as a time response. To get some intuition of the thickness parameter b and dynamical beats, the response function is plotted for different b in \Cref{theory_besselbeats}. In this plot one can see how different parameters effect the form of the Response function. The parameter $\gamma $ controls the decay rate, which can be seen from the comparison of the slopes of the green and orange curves. Another very important feature of the plot are the dips, that are dependent from the parameter b. These dips are the zero crossings of the Bessel function and are called the Dynamical beats or also the \textbf{Bessel beats}. This is a multiple scattering phenomena, which arises from coherent interference of emitted light from different nuclei at different points in the target. An important characteristic of dynamical beats is, that if the target is thicker, the beats arise on shorter time scales and vice versa.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.75\textwidth]{data/background/J_0__J_1_2.png}
+    \caption{Response function  $I = |E|^2 = |R|^2$ in \Cref{responsefunction}  and $|\rho_{eg}|^2$ in \Cref{rhoegana} as a function of time, with $b=1$, $\Delta = 0$, $\gamma = 1$. The black curve is the time response and the blue curve is proportional to dipole moments of the target}
+    \label{theory_J0J1}
+\end{figure} 
+
+\subsection{Calculation of $\rho_{eg}$ in time domain}
+\Cref{timeomegapre} and \Cref{timerhoegpre} can be solved for $\Tilde{\rho}_{eg}$ instead of $\Omega$ by following the same calculation. As a result, $\Tilde{\rho}_{eg}$ is described by a Bessel function of order 0 in the time domain
+\begin{equation}
+    \Tilde{\rho}_{eg} = \frac{i}{2} e^{\tau (i\Delta - \frac{\gamma}{2})} J_0(2\sqrt{b\tau}) \, . \label{rhoegana}
+\end{equation}
+
+The most important difference between $\Tilde{\rho}_{eg}$ and the response function is the orders of the Bessel functions. $\rho_{eg}$ is governed by Bessel function of order 0 whereas response function by bessel function of order 1. This result agrees with the result from \cite{Smirnov1999}, where the calculated nucleus response is also described with a bessel function of order zero. Here an important relation between the first and zeroth order bessel function can be found in \cite{Smirnov1999}
+\begin{equation}
+    J_1(x) = -J_0^\prime(x)\, .
+\end{equation}
+This purely mathematical relation can be used to interpret the physical foundations of the system.\\
+
+In the \Cref{theory_J0J1}, the difference between the response function and $\rho_{eg}$ can be seen. The Bessel beats of the $\rho_{eg}$ are coming in a much shorter time span compared to the ones of the outgoing light field. Here an important relation between $\rho_{eg}$ and the induced dipole moments is that they are proportional to each other. This can be shown by calculating the expectation value of the dipole operator, which is given as \cite{Scully_Zubairy_1997}
+\begin{equation}
+    \langle \hat{d}\rangle= d \, \langle\hat{\sigma}^{+}\rangle + \, h.c. \, ,
+\end{equation}
+where the $\hat{d}$ is the dipole-moment operator, $d$ is the dipole moment constant and the operators $\hat{\sigma}^{\pm}$ are the ladder operators, defined in \cref{lindbladian}. The expectation value for ladder operators are defined as $ \langle\hat{\sigma}^{\pm}\rangle  = tr(\hat{\rho} \cdot \hat{\sigma}^{\pm})$. We can calculate the expectation value for $\langle\hat{\sigma}^{+}\rangle $, where the $\hat{\sigma}^{+}$ is given as $\hat{\sigma}^{+} = \ket{e} \bra{g} $
+\begin{align}
+    \langle\hat{\sigma}^{+}\rangle  &= tr(\hat{\rho} \cdot \hat{\sigma}^{+})\\
+    &=\bra{g} \hat{\rho} \cdot \hat{\sigma}^+\ket{g} + \bra{e} \hat{\rho} \cdot \hat{\sigma}^+\ket{e}\\
+    &= \bra{g} \hat{\rho}\ket{e} = \rho_{ge}
+\end{align}
+ 
+\section{Burnham-Chiao Ringing}\label{section:burnhamchiao} 
+Going beyond the low-excitation regime, it is no longer possible to obtain an analytical solution for the Maxwell-Bloch equations. Only under certain conditions, it is possible to obtain a solution. In the paper \cite{BURNHAM1969}, Burnham and Chiao were able to approximate the light propagation and nuclear dynamics in an excitation regime from LER to population inversion. They used two main assumptions:
+\begin{enumerate}
+    \item They considered only times short compared to the characteristic decay times, so we assume that $\gamma= 0$.
+    \item They assumed that the medium is short enough, so that the incident pulse appears identical to each atom in the sample.
+\end{enumerate}
+
+Furthermore they modelled the atoms of the medium as harmonic oscillators, which is not valid in the inversion limit. They derived the propagation equations by integrating the harmonic oscillator into the Maxwell equations. For more detail, see eq. (3)-(4) in \cite{BURNHAM1969}. 
+\subsection{Response function in low excitation regime}
+In LER, they arrive to this coupled set of PDEs
+\begin{subequations}
+\begin{align}
+    \frac{\partial \mathcal{X}(t,z)}{\partial t} &= \frac{-i f^{1/2} e}{2m \omega_0} \mathcal{E}(t,z)\label{burnham_1} \\
+    \left(\frac{\partial}{\partial z} + \frac{1}{c} \frac{\partial}{\partial t}  \right) \mathcal{E}(t,z) &=  \frac{-i 2\pi f^{1/2}N e\omega_0}{c}  \mathcal{X}(t,z)\, .\label{burnham_2}
+\end{align}
+\end{subequations}
+Here they denote $\mathcal{X}(t,z)$ as electronic displacement which can be seen as polarization and is proportional to $\rho_{eg}$, and $\mathcal{E}(t,z)$ is the electric field. Also $f$ denotes the oscillator strength, $e$ is the electronic charge, $m$ is the electronic mass, $\omega_0$ is the frequency of the harmonic oscillator and $c$ is the speed of light.\\
+
+Using a coordination transformation $\tau = t -z/c$ and further using these substitutions
+\begin{equation}
+    \mathcal{X}(\tau, z) = Y(q) \;\;\; , \;\;\; Y(0) = \mathcal{X}_0\, ,
+\end{equation}
+where they defined $q = 2\sqrt{Q\tau z}$. They then arrive at the differential equation
+\begin{equation}
+    Y^{\prime \prime} + Y^\prime/q + Y = 0\, .\label{burnham_diff}
+\end{equation}
+The solution of this differential equation is a Bessel function of order zero and is given as follows with boundary conditions $Y(0) = \mathcal{X}_0$ and $Y^\prime (0) = 0$ for a sample of length Z and a new substitution $\tau_R = 4c/\omega_p^2 Z$, as the radiation time
+\begin{subequations}
+\begin{align}
+    \mathcal{X}(\tau) &= \mathcal{X}_0 J_0(2\sqrt{\tau/\tau_R})\, , \label{burnham_sol1}\\
+    \mathcal{E}(\tau) &= - \mathcal{E}_1 \frac{J_1(2\sqrt{\tau/\tau_R})}{\sqrt{\tau/\tau_R}}\, .
+\end{align}
+\end{subequations}
+Here we recover the known results from our calculation in \Cref{section_respfunction}, where nucleus response $\rho_{eg}$ is governed by the Bessel function of order zero $J_0$ and the electric field by a Bessel function of order one $J_1$. 
+\subsection{Beyond LER}
+Going beyond the low excitation regime, in \cite{BURNHAM1969}, they introduce a vector \textbf{P} for the the two level system, where they define the angle of excitation $\Theta$ as the angle between \textbf{P} and the ground state. Doing so, the electronic displacement becomes $\mathcal{X} = P \sin{\Theta}$. Here it is good to emphasize, that they recover the \cref{burnham_1} and \cref{burnham_2} in the linear excitation regime $\Theta \approx \sin{\Theta}$. Inserting this electronic displacement equation into the propagation equations, they arrive to a sinus dependent differential equation instead of \Cref{burnham_diff}
+\begin{equation}
+    Y^{\prime \prime} + Y^\prime/q + \sin Y = 0\, \label{bunrhma_diff2}\, ,
+\end{equation}
+with the boundary conditions $Y(0) = \Theta_0$ and $Y^\prime(0) = 0$, where the excitation angle is defined in $0 \le \Theta_0 \le \pi $. This differential equation in \ref{bunrhma_diff2} is no longer analytically solvable. In the next chapters we will further investigate this paper and compare it with our results. 
