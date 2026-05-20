@@ -45,5 +45,4 @@
 \contentsline {subsection}{\numberline {4.3.6}Time shifts as a signature of non linear excitation}{34}{subsection.4.3.6}%
 \contentsline {subsection}{\numberline {4.3.7}Comparison with Burnham-Chiao in the non-decaying limit}{35}{subsection.4.3.7}%
 \contentsline {chapter}{\numberline {5}Summary and outlook}{37}{chapter.5}%
-\contentsline {chapter}{\numberline {A}The Table of weights for finite difference}{38}{appendix.A}%
-\contentsline {chapter}{\nonumberline Bibliography}{39}{chapter*.28}%
+\contentsline {chapter}{\nonumberline Bibliography}{38}{chapter*.27}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.2.2)  19 MAY 2026 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.2.2)  19 MAY 2026 20:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1314,7 +1314,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count504
 \@quotereset=\count505
-(./main.aux (./titlepage.aux) (./abstracts.aux) (./chap_intro.aux) (./chap_background.aux) (./chap_methods.aux) (./chap_highlow.aux) (./chap_conclusion.aux) (./chap_appendixB.aux) (./chap_acknowledge.aux))
+(./main.aux (./titlepage.aux) (./abstracts.aux) (./chap_intro.aux) (./chap_background.aux) (./chap_methods.aux) (./chap_highlow.aux) (./chap_conclusion.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
@@ -1537,7 +1537,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
 
 pdfTeX warning: pdflatex (file ./data/introduction/OverviewPicture.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<data/introduction/OverviewPicture.pdf, id=214, 953.16734pt x 398.3386pt>
+<data/introduction/OverviewPicture.pdf, id=212, 953.16734pt x 398.3386pt>
 File: data/introduction/OverviewPicture.pdf Graphic file (type pdf)
 <use data/introduction/OverviewPicture.pdf>
 Package pdftex.def Info: data/introduction/OverviewPicture.pdf  used on input line 23.
@@ -1550,7 +1550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc} <./data/introduction/OverviewPicture.pdf>]
 
 pdfTeX warning: pdflatex (file ./data/introduction/resultsvergleich_2.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<data/introduction/resultsvergleich_2.pdf, id=273, 289.08pt x 174.15932pt>
+<data/introduction/resultsvergleich_2.pdf, id=271, 289.08pt x 174.15932pt>
 File: data/introduction/resultsvergleich_2.pdf Graphic file (type pdf)
 <use data/introduction/resultsvergleich_2.pdf>
 Package pdftex.def Info: data/introduction/resultsvergleich_2.pdf  used on input line 35.
@@ -1563,7 +1563,7 @@ chapter 2.
 
 
 pdfTeX warning: pdflatex (file ./data/background/mossbauer_transitions2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<data/background/mossbauer_transitions2.pdf, id=289, 802.197pt x 598.17325pt>
+<data/background/mossbauer_transitions2.pdf, id=287, 802.197pt x 598.17325pt>
 File: data/background/mossbauer_transitions2.pdf Graphic file (type pdf)
 <use data/background/mossbauer_transitions2.pdf>
 Package pdftex.def Info: data/background/mossbauer_transitions2.pdf  used on input line 5.
@@ -1591,7 +1591,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
  <./data/background/mossbauer_transitions2.pdf>]
 
 pdfTeX warning: pdflatex (file ./data/background/setup_2.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<data/background/setup_2.pdf, id=318, 573.09543pt x 194.4177pt>
+<data/background/setup_2.pdf, id=316, 573.09543pt x 194.4177pt>
 File: data/background/setup_2.pdf Graphic file (type pdf)
 <use data/background/setup_2.pdf>
 Package pdftex.def Info: data/background/setup_2.pdf  used on input line 27.
@@ -1612,13 +1612,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
  []
 
 [8]
-<data/background/besselbeats_2.png, id=437, 467.5869pt x 326.6604pt>
+<data/background/besselbeats_2.png, id=435, 467.5869pt x 326.6604pt>
 File: data/background/besselbeats_2.png Graphic file (type png)
 <use data/background/besselbeats_2.png>
 Package pdftex.def Info: data/background/besselbeats_2.png  used on input line 190.
 (pdftex.def)             Requested size: 328.88559pt x 229.77223pt.
  [9]
-<data/background/J_0__J_1_2.png, id=471, 457.9509pt x 325.215pt>
+<data/background/J_0__J_1_2.png, id=469, 457.9509pt x 325.215pt>
 File: data/background/J_0__J_1_2.png Graphic file (type png)
 <use data/background/J_0__J_1_2.png>
 Package pdftex.def Info: data/background/J_0__J_1_2.png  used on input line 214.
@@ -1714,7 +1714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-<data/highlow_exc/benchmark_plot.png, id=605, 647.7801pt x 620.7993pt>
+<data/highlow_exc/benchmark_plot.png, id=603, 647.7801pt x 620.7993pt>
 File: data/highlow_exc/benchmark_plot.png Graphic file (type png)
 <use data/highlow_exc/benchmark_plot.png>
 Package pdftex.def Info: data/highlow_exc/benchmark_plot.png  used on input line 19.
@@ -1724,7 +1724,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-<data/highlow_exc/omega_ananum_plot.png, id=611, 461.0826pt x 329.0694pt>
+<data/highlow_exc/omega_ananum_plot.png, id=609, 461.0826pt x 329.0694pt>
 File: data/highlow_exc/omega_ananum_plot.png Graphic file (type png)
 <use data/highlow_exc/omega_ananum_plot.png>
 Package pdftex.def Info: data/highlow_exc/omega_ananum_plot.png  used on input line 30.
@@ -1754,7 +1754,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<data/highlow_exc/rhoeg_ananum_plot.png, id=630, 461.0826pt x 329.0694pt>
+<data/highlow_exc/rhoeg_ananum_plot.png, id=628, 461.0826pt x 329.0694pt>
 File: data/highlow_exc/rhoeg_ananum_plot.png Graphic file (type png)
 <use data/highlow_exc/rhoeg_ananum_plot.png>
 Package pdftex.def Info: data/highlow_exc/rhoeg_ananum_plot.png  used on input line 48.
@@ -1790,7 +1790,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
  []
 
 [21 <./data/highlow_exc/rhoeg_ananum_plot.png>]
-<data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png, id=650, 625.1355pt x 273.1806pt>
+<data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png, id=648, 625.1355pt x 273.1806pt>
 File: data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png Graphic file (type png)
 <use data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png>
 Package pdftex.def Info: data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png  used on input line 71.
@@ -1805,7 +1805,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<data/highlow_exc/low_excitation_ratio.png, id=656, 612.8496pt x 217.5327pt>
+<data/highlow_exc/low_excitation_ratio.png, id=654, 612.8496pt x 217.5327pt>
 File: data/highlow_exc/low_excitation_ratio.png Graphic file (type png)
 <use data/highlow_exc/low_excitation_ratio.png>
 Package pdftex.def Info: data/highlow_exc/low_excitation_ratio.png  used on input line 85.
@@ -1816,7 +1816,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
  []
 
 [22 <./data/highlow_exc/low_excitation_OMega_rhoeg_DOUBLEBLOCK.png>]
-<data/highlow_exc/low_excitation_OMega_rhoeeratio2.png, id=671, 620.7993pt x 217.5327pt>
+<data/highlow_exc/low_excitation_OMega_rhoeeratio2.png, id=669, 620.7993pt x 217.5327pt>
 File: data/highlow_exc/low_excitation_OMega_rhoeeratio2.png Graphic file (type png)
 <use data/highlow_exc/low_excitation_OMega_rhoeeratio2.png>
 Package pdftex.def Info: data/highlow_exc/low_excitation_OMega_rhoeeratio2.png  used on input line 96.
@@ -1831,7 +1831,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-<data/highlow_exc/low_exc_4BLOCK.png, id=679, 655.4889pt x 612.8496pt>
+<data/highlow_exc/low_exc_4BLOCK.png, id=677, 655.4889pt x 612.8496pt>
 File: data/highlow_exc/low_exc_4BLOCK.png Graphic file (type png)
 <use data/highlow_exc/low_exc_4BLOCK.png>
 Package pdftex.def Info: data/highlow_exc/low_exc_4BLOCK.png  used on input line 107.
@@ -1866,7 +1866,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
-<data/highlow_exc/low_excitation_summed_RHOEE_3lines.png, id=716, 628.749pt x 251.4996pt>
+<data/highlow_exc/low_excitation_summed_RHOEE_3lines.png, id=714, 628.749pt x 251.4996pt>
 File: data/highlow_exc/low_excitation_summed_RHOEE_3lines.png Graphic file (type png)
 <use data/highlow_exc/low_excitation_summed_RHOEE_3lines.png>
 Package pdftex.def Info: data/highlow_exc/low_excitation_summed_RHOEE_3lines.png  used on input line 134.
@@ -1876,12 +1876,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-<data/highlow_exc/threeblocksummedrhoee.png, id=718, 612.8496pt x 229.0959pt>
+<data/highlow_exc/threeblocksummedrhoee.png, id=716, 612.8496pt x 229.0959pt>
 File: data/highlow_exc/threeblocksummedrhoee.png Graphic file (type png)
 <use data/highlow_exc/threeblocksummedrhoee.png>
 Package pdftex.def Info: data/highlow_exc/threeblocksummedrhoee.png  used on input line 144.
 (pdftex.def)             Requested size: 438.51413pt x 163.92467pt.
-<data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png, id=720, 441.5697pt x 329.0694pt>
+<data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png, id=718, 441.5697pt x 329.0694pt>
 File: data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png Graphic file (type png)
 <use data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png>
 Package pdftex.def Info: data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png  used on input line 153.
@@ -1896,7 +1896,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-<data/highlow_exc/beyond_ler/High_res_Omega.png, id=739, 439.4016pt x 325.215pt>
+<data/highlow_exc/beyond_ler/High_res_Omega.png, id=737, 439.4016pt x 325.215pt>
 File: data/highlow_exc/beyond_ler/High_res_Omega.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/High_res_Omega.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/High_res_Omega.png  used on input line 164.
@@ -1912,7 +1912,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
  []
 
 [27 <./data/highlow_exc/Low_exc_omega_summedrhoee_ratio.png>]
-<data/highlow_exc/beyond_ler/high_res_OMega2Blockzoom.png, id=752, 618.6312pt x 384.4764pt>
+<data/highlow_exc/beyond_ler/high_res_OMega2Blockzoom.png, id=750, 618.6312pt x 384.4764pt>
 File: data/highlow_exc/beyond_ler/high_res_OMega2Blockzoom.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/high_res_OMega2Blockzoom.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/high_res_OMega2Blockzoom.png  used on input line 180.
@@ -1945,7 +1945,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-<data/highlow_exc/beyond_ler/high_res_OMega_3Block.png, id=771, 625.1355pt x 217.5327pt>
+<data/highlow_exc/beyond_ler/high_res_OMega_3Block.png, id=769, 625.1355pt x 217.5327pt>
 File: data/highlow_exc/beyond_ler/high_res_OMega_3Block.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/high_res_OMega_3Block.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/high_res_OMega_3Block.png  used on input line 200.
@@ -1970,7 +1970,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-<data/highlow_exc/beyond_ler/OMega_6BLOCK.png, id=786, 611.886pt x 714.7503pt>
+<data/highlow_exc/beyond_ler/OMega_6BLOCK.png, id=784, 611.886pt x 714.7503pt>
 File: data/highlow_exc/beyond_ler/OMega_6BLOCK.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/OMega_6BLOCK.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/OMega_6BLOCK.png  used on input line 220.
@@ -2007,12 +2007,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 227.
 
-<data/highlow_exc/beyond_ler/highres_rhoeg_rhoee_2BLOCK.png, id=789, 614.295pt x 275.3487pt>
+<data/highlow_exc/beyond_ler/highres_rhoeg_rhoee_2BLOCK.png, id=787, 614.295pt x 275.3487pt>
 File: data/highlow_exc/beyond_ler/highres_rhoeg_rhoee_2BLOCK.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/highres_rhoeg_rhoee_2BLOCK.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/highres_rhoeg_rhoee_2BLOCK.png  used on input line 231.
 (pdftex.def)             Requested size: 438.51413pt x 196.5577pt.
-<data/highlow_exc/beyond_ler/TIMESLICES_3blockrhoee.png, id=791, 612.8496pt x 229.0959pt>
+<data/highlow_exc/beyond_ler/TIMESLICES_3blockrhoee.png, id=789, 612.8496pt x 229.0959pt>
 File: data/highlow_exc/beyond_ler/TIMESLICES_3blockrhoee.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/TIMESLICES_3blockrhoee.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/TIMESLICES_3blockrhoee.png  used on input line 238.
@@ -2044,7 +2044,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 249.
 
-<data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png, id=830, 628.749pt x 251.4996pt>
+<data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png, id=828, 628.749pt x 251.4996pt>
 File: data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png  used on input line 256.
@@ -2065,7 +2065,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
  []
 
 [33 <./data/highlow_exc/beyond_ler/high_res_summed_RHOEE_3lines.png>]
-<data/highlow_exc/beyond_ler/relativetimeshift_2.png, id=844, 463.2507pt x 329.5512pt>
+<data/highlow_exc/beyond_ler/relativetimeshift_2.png, id=842, 463.2507pt x 329.5512pt>
 File: data/highlow_exc/beyond_ler/relativetimeshift_2.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/relativetimeshift_2.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/relativetimeshift_2.png  used on input line 273.
@@ -2081,7 +2081,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
  []
 
 [34 <./data/highlow_exc/beyond_ler/relativetimeshift_2.png>]
-<data/highlow_exc/beyond_ler/burnhamchiao_2.png, id=859, 609.7179pt x 272.6988pt>
+<data/highlow_exc/beyond_ler/burnhamchiao_2.png, id=857, 609.7179pt x 272.6988pt>
 File: data/highlow_exc/beyond_ler/burnhamchiao_2.png Graphic file (type png)
 <use data/highlow_exc/beyond_ler/burnhamchiao_2.png>
 Package pdftex.def Info: data/highlow_exc/beyond_ler/burnhamchiao_2.png  used on input line 291.
@@ -2157,98 +2157,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
 
 ]
-\openout2 = `chap_appendixB.aux'.
-
- (./chap_appendixB.tex
-chapter A.
-) [38
-
-
-
-
-]
 chapter without number
 
-Overfull \hbox (2.97542pt too wide) in paragraph at lines 199--199
+Overfull \hbox (2.97542pt too wide) in paragraph at lines 201--201
 \T1/cmr/m/n/10.95 Zwei-Niveau Sys-tem''. In: \T1/cmr/m/it/10.95 Vor-lesungsskript, Atom-physik WS2003/2004, Johannes-
  []
 
 
-Overfull \hbox (41.99269pt too wide) in paragraph at lines 199--199
+Overfull \hbox (41.99269pt too wide) in paragraph at lines 201--201
 []\T1/cmr/m/n/10.95 ESRF. \T1/cmr/m/it/10.95 ESRF ma-chine pa-ram-e-ters\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / www . esrf . fr / home / UsersAndScience /
  []
 
 
-Overfull \hbox (22.02994pt too wide) in paragraph at lines 199--199
+Overfull \hbox (22.02994pt too wide) in paragraph at lines 201--201
 \T1/cmr/m/it/10.95 Jour-nal of The-o-ret-i-cal Physics \T1/cmr/m/n/10.95 21.6^^U7 (1982), pp. 467^^U488. \T1/cmr/m/sc/10.95 doi\T1/cmr/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 10 . 1007 / bf02650179$[][]\T1/cmr/m/n/10.95 . 
  []
 
 
-Overfull \hbox (42.00276pt too wide) in paragraph at lines 199--199
+Overfull \hbox (42.00276pt too wide) in paragraph at lines 201--201
 \T1/cmr/m/n/10.95 For-mu-las''. In: \T1/cmr/m/it/10.95 SIAM Re-view \T1/cmr/m/n/10.95 40.3 (1998), pp. 685^^U691. \T1/cmr/m/sc/10.95 doi\T1/cmr/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 10 . 1137 / s0036144596322507$[][]\T1/cmr/m/n/10.95 . 
  []
 
-[39
+[38
 
 
 
-] [40] [41] (./main.lof [42] [43])
-\tf@lof=\write6
-\openout6 = `main.lof'.
-
- (./main.lot)
-\tf@lot=\write7
-\openout7 = `main.lot'.
-
- [44]
-\openout2 = `chap_acknowledge.aux'.
-
- (./chap_acknowledge.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-) [45
-
-
-] (./main.aux (./titlepage.aux) (./abstracts.aux) (./chap_intro.aux) (./chap_background.aux) (./chap_methods.aux) (./chap_highlow.aux) (./chap_conclusion.aux) (./chap_appendixB.aux) (./chap_acknowledge.aux))
+] [39] [40] [41] (./main.aux (./titlepage.aux) (./abstracts.aux) (./chap_intro.aux) (./chap_background.aux) (./chap_methods.aux) (./chap_highlow.aux) (./chap_conclusion.aux))
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44374 strings out of 476025
- 862970 string characters out of 5790018
- 1877388 words of memory out of 5000000
- 63777 multiletter control sequences out of 15000+600000
+ 44286 strings out of 476025
+ 860662 string characters out of 5790018
+ 1874388 words of memory out of 5000000
+ 63722 multiletter control sequences out of 15000+600000
  552491 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,19n,120p,10644b,3014s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (52 pages, 5191549 bytes).
+ 125i,19n,120p,10644b,2235s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (48 pages, 5158955 bytes).
 PDF statistics:
- 1491 PDF objects out of 1728 (max. 8388607)
- 1288 compressed objects within 13 object streams
- 268 named destinations out of 1000 (max. 500000)
- 522 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1319 PDF objects out of 1440 (max. 8388607)
+ 1123 compressed objects within 12 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 514 words of extra memory for PDF output out of 10000 (max. 10000000)
 
