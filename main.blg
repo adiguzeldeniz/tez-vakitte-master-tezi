@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[36] biber-darwin:340> INFO - === Tue May 19, 2026, 20:00:38
-[44] Biber.pm:419> INFO - Reading 'main.bcf'
-[93] Biber.pm:979> INFO - Found 53 citekeys in bib section 0
-[100] Biber.pm:4419> INFO - Processing section 0
-[105] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
-[106] bibtex.pm:1713> INFO - LaTeX decoding ...
-[138] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
-[364] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[364] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[364] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[364] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[393] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[422] bbl.pm:763> INFO - Output to main.bbl
-[422] Biber.pm:131> WARN - Duplicate entry key: 'Heeg2021' in file 'ref.bib', skipping ...
-[422] Biber.pm:131> WARN - legacy month field 'Mar' in entry 'RevModPhys.88.015006' is not an integer - this will probably not sort properly.
-[422] Biber.pm:131> WARN - legacy month field 'Sep' in entry 'PhysRevA.76.033817' is not an integer - this will probably not sort properly.
-[422] Biber.pm:133> INFO - WARNINGS: 3
+[31] biber:340> INFO - === Wed May 20, 2026, 21:35:55
+[38] Biber.pm:419> INFO - Reading 'main.bcf'
+[67] Biber.pm:979> INFO - Found 28 citekeys in bib section 0
+[72] Biber.pm:4419> INFO - Processing section 0
+[77] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
+[78] bibtex.pm:1713> INFO - LaTeX decoding ...
+[106] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[261] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[261] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[276] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[283] bbl.pm:763> INFO - Output to main.bbl
+[283] Biber.pm:131> WARN - Duplicate entry key: 'Heeg2021' in file 'ref.bib', skipping ...
+[283] Biber.pm:131> WARN - legacy month field 'Mar' in entry 'RevModPhys.88.015006' is not an integer - this will probably not sort properly.
+[283] Biber.pm:131> WARN - legacy month field 'Sep' in entry 'PhysRevA.76.033817' is not an integer - this will probably not sort properly.
+[283] Biber.pm:133> INFO - WARNINGS: 3

@@ -1,48 +1,26 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Goals of this thesis}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Thesis outline}{3}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Theoretical Background}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Mössbauer}{4}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Mössbauer isotopes as an extreme platform for quantum optics}{4}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Nuclear forward scattering}{5}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Calculation of b parameter to physical thickness}{5}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Quantum optical model}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Light-Matter Interaction}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Spontaneous Emission}{6}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Maxwell-Bloch Equations}{7}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Pulse area theorem}{7}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Low excitation regime}{8}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Low Excitation Approximation}{8}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Response function in time and frequency domain}{8}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Calculation of $\rho _{eg}$ in time domain}{10}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Burnham-Chiao Ringing}{11}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Response function in low excitation regime}{12}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Beyond LER}{12}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Numerical Implementation}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Method of lines}{14}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Discretization of spatial derivative}{14}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Calculation of weights}{14}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Second vs. fourth order MOL}{15}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Initial Conditions}{16}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Nuclei}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Incident Light as a Gaussian pulse}{16}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Implementation}{17}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Non Linear Excitation limit}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Motivation}{18}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Low excitation regime}{18}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Comparison analytical and numerical solutions}{18}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Excitation scan in LER}{21}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Propagation effects in LER}{22}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Summed incoherent radiation as an observable}{25}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Beyond the LER}{28}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}$\Omega $ under the microscope}{28}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Coherent radiation in thicker targets}{30}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}$\rho _{eg}$ and $\rho _{ee}$ beyond LER}{30}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Time evolution of $\rho _{ee}$ in target}{33}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Incoherent radiation in higher excitation}{33}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Time shifts as a signature of non linear excitation}{34}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Comparison with Burnham-Chiao in the non-decaying limit}{35}{subsection.4.3.7}%
-\contentsline {chapter}{\numberline {5}Summary and outlook}{37}{chapter.5}%
-\contentsline {chapter}{\nonumberline Bibliography}{38}{chapter*.27}%
+\contentsline {chapter}{\numberline {2}Theoretical Background}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Mössbauer}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Mössbauer isotopes as an extreme platform for quantum optics}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Nuclear forward scattering}{3}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Calculation of b parameter to physical thickness}{3}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Quantum optical model}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Light-Matter Interaction}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Spontaneous Emission}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Maxwell-Bloch Equations}{5}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Pulse area theorem}{5}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Low excitation regime}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Low Excitation Approximation}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Response function in time and frequency domain}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Calculation of $\rho _{eg}$ in time domain}{8}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Burnham-Chiao Ringing}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Response function in low excitation regime}{10}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Beyond LER}{10}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Numerical Implementation}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Method of lines}{12}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Non Linear Excitation limit}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Motivation}{13}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Summary and outlook}{14}{chapter.5}%
+\contentsline {chapter}{\nonumberline Bibliography}{15}{chapter*.5}%
